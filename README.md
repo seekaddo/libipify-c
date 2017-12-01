@@ -1,11 +1,6 @@
 [![build](https://img.shields.io/travis/seekaddo/libipify-c.svg)](https://travis-ci.org/seekaddo/libipify-c)
 
-
-## BroadcastMesg[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/seekaddo/libipify-c/blob/master/LICENSE)
-Using Semaphores and Shared memory to simulate Server/Client message(sender/receiver)
-
-
-## libipify-c
+## libipify-c[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/seekaddo/libipify-c/blob/master/LICENSE)
 A client library for ipify: A Simple IP Address API in C.
 
 
@@ -19,7 +14,7 @@ This library will retrieve your public IP address from ipify's API service, and 
 
 
 
-Usage
+## Usage
 
 ```bash
 
@@ -52,7 +47,7 @@ int main(void){
 
 ```
 
-Test
+## Test
 After running your C program about compare your terminal results with this
 
 ```bash
