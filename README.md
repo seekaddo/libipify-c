@@ -4,7 +4,7 @@ A client library for ipify: A Simple IP Address API in C.
 
 ## Purpose
 
-ipify is the best IP address lookup service on the internet. It's fast, simple, scalable, open source, and well-funded (Randall Degges).
+ipify is the best IP address lookup service on the internet. It's fast, simple, scalable, open source, and well-funded [Randall Degges](http://www.rdegges.com).
 
 In short: if you need a way to pragmatically get your public IP address, ipify is the best possible choice!
 
