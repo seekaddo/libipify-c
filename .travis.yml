@@ -3,7 +3,7 @@ language: c
 sudo: required
 
 os:
-    #- linux
+    - linux
     - osx
 
 
@@ -21,13 +21,14 @@ addons:
 
 
 before_install:
-      - uname -a
-      - gcc -v
+      - echo uname -a
+      - echo gcc -v
 
 
 
 script:
   - make install
   # tests
-  - make all && make test
+  - make all
+  - make test
   - make clean

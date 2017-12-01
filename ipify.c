@@ -1,3 +1,26 @@
+/*MIT License
+
+Copyright (c) 2017 Dennis Addo
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+ */
+
 /*!
  * @file libipify.c
  *
@@ -65,20 +88,20 @@ void ipify_connect(void) {
 
 
     if ((sfd = socket(AF_INET, SOCK_STREAM, 0)) == -1) {
-        fprintf(stderr, "%s[socket]: %s", "cleint_test", strerror(errno));
+        fprintf(stderr, "%s[socket]: %s", "ipify", strerror(errno));
         exit(EXIT_FAILURE);
     }
 
 
     if (getaddrinfo(ipify_host, "http", &addrspec, &client_addr) != 0) {
-        fprintf(stderr, "%s[getaddrinfo]: %s", "cleint_test", strerror(errno));
+        fprintf(stderr, "%s[getaddrinfo]: %s", "ipify", strerror(errno));
         freeaddrinfo(client_addr);
         close(sfd);
         exit(EXIT_FAILURE);
     }
 
     if ((connect(sfd, client_addr->ai_addr, client_addr->ai_addrlen)) == -1) {
-        fprintf(stderr, "%s[getaddrinfo]: %s", "cleint_test", strerror(errno));
+        fprintf(stderr, "%s[getaddrinfo]: %s", "ipify", strerror(errno));
         freeaddrinfo(client_addr);
         close(sfd);
         exit(EXIT_FAILURE);
@@ -99,7 +122,7 @@ void ipify_disconnect(void) {
 
     if (sfd != -1) {
         if (shutdown(sfd, SHUT_RDWR) == -1) {
-            fprintf(stderr, "%s[shutdown]: %s", "cleint_test", strerror(errno));
+            fprintf(stderr, "%s[shutdown]: %s", "ipify", strerror(errno));
             close(sfd);
             exit(EXIT_FAILURE);
         }
@@ -122,13 +145,13 @@ char *ipify_getIP(void) {
     char *ipbuffer = NULL;
 
     if (send(sfd, request_templt, strlen(request_templt), MSG_OOB) == -1) {
-        fprintf(stderr, "%s[send]: %s", "cleint_test", strerror(errno));
+        fprintf(stderr, "%s[send]: %s", "ipify", strerror(errno));
         close(sfd);
         exit(EXIT_FAILURE);
     }
 
     if (recv(sfd, msbuffer, sizeof(msbuffer), 0) == -1) {
-        fprintf(stderr, "%s[send]: %s", "cleint_test", strerror(errno));
+        fprintf(stderr, "%s[send]: %s", "ipify", strerror(errno));
         close(sfd);
         exit(EXIT_FAILURE);
     }
