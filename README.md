@@ -48,11 +48,15 @@ int main(void){
 ```
 
 ## Test
-After running your C program about compare your terminal results with this
+After running your C program above compare your terminal results with this
 
 ```bash
 #Do this in the terminal
 curl 'https://api.ipify.org?format=json'
+
+
+#if you don't have curl installed,then use your browser.
+https://api.ipify.org?format=json
 
 ```
 
