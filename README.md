@@ -1,3 +1,10 @@
+[![build](https://img.shields.io/travis/seekaddo/libipify-c.svg)](https://travis-ci.org/seekaddo/libipify-c)
+
+
+## BroadcastMesg[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/seekaddo/libipify-c/blob/master/LICENSE)
+Using Semaphores and Shared memory to simulate Server/Client message(sender/receiver)
+
+
 ## libipify-c
 A client library for ipify: A Simple IP Address API in C.
 
