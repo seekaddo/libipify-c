@@ -32,10 +32,14 @@ int main(void){
 
 
     ipify_connect();
-    char *ipptr = ipify_getIP();
-
+    
+    // no free needed here. It uses static gloabl buffer of size 4069 which is enough for GET response
+    char *ipptr = ipify_getIP(); 
+    
     fprintf(stdout, "Public ip is: %s\n", ipptr);
     ipify_disconnect();
+    
+    return 0
 }
 
 

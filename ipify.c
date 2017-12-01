@@ -40,7 +40,7 @@ static const char *const ipify_host = "api.ipify.org";
 /*<---- user defined variables   --->*/
 
 static int sfd = -1;
-static char msbuffer[409]; /*! maximum bytes for the GET response */
+static char msbuffer[4069]; /*! maximum bytes for the GET response */
 
 /*! getIPaddr   retreive the ip address from the json*/
 static char *getIPaddr(char *str);
