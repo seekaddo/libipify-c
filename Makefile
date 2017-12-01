@@ -46,11 +46,10 @@ EXCLUDE_PATTERN=footrulewidth
 
 .PHONY: all libipify
 .DEFAULT_GAOL	:=all
-all: libipify
+all: ipify
 
-## This is for the function smc_parsecommandline(3)
 ipify:$(OBJECTS1)
-	$(CC) $^ -o $@
+	$(CC) client_test.c $^ -o $@
 build:$(OBJECTS1)
 	ar -cvq ipify.a $^
 
@@ -58,7 +57,11 @@ build:$(OBJECTS1)
 .SILENT: clean
 .PHONY: clean  testall
 
-##test all with force
+
+test:
+	./ipify
+
+
 install:
 	make build
 	sudo cp ipify.h /usr/local/include

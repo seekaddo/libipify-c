@@ -1,0 +1,33 @@
+
+language: c
+sudo: required
+
+os:
+    #- linux
+    - osx
+
+
+compiler:
+  #- gcc
+  - gcc-7
+  #- clang
+addons:
+    apt:
+        sources:
+            - ubuntu-toolchain-r-test # gcc
+        packages:
+            - gcc-7
+            - make
+
+
+before_install:
+      - uname -a
+      - gcc -v
+
+
+
+script:
+  - make install
+  # tests
+  - make all && make test
+  - make clean
